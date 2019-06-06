@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <script>
+        function verificaMaior() {
+            ///leitura dos campos
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
+            let n3 = parseFloat(document.getElementById("n3").value);
+            let n4 = parseFloat(document.getElementById("n4").value);
+
+            if (n1 > n2 && n1 > n3 && n1 > n4) {
+                window.alert(n1 + " é o maior")
+            } else if (n2 > n1 && n2 > n3 && n2 > n4) {
+                window.alert(n2 + " é o maior")
+            } else if (n3 > n1 && n3 > n2 && n3 > n4) {
+                window.alert(n3 + " é o maior")
+            } else {
+                window.alert(n4 + " é o maior")
+            }
+
+        }
+    </script>
+
+</head>
+
+></head>
+
+<body>
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <input type="number" id="n3">
+    <input type="number" id="n4">
+
+    <button onclick="verificaMaior()"> Maior</button>
+
+</body>
+
+</html>

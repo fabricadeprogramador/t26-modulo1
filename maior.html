@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script>
+        function verificarMaior() {
+            let num1 = parseFloat(document.getElementById("n1").value);
+            let num2 = parseFloat(document.getElementById("n2").value);
+
+            if (num1 > num2) {
+                document.getElementById("resposta").innerText = num1;
+            } else {
+                document.getElementById("resposta").innerText = num2;
+            }
+
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <label> Número 1 </label>
+    <input type="number" id="n1" />
+
+    <label> Número 2 </label>
+    <input type="number" id="n2" />
+
+
+    <button onclick="verificarMaior()">Maior</button>
+
+    <label id="resposta"></label>
+
+</body>
+
+</html>

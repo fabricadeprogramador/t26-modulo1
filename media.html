@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script>
+        function calcularMedia() {
+            let p1 = parseFloat(document.getElementById("p1").value);
+            let p2 = parseFloat(document.getElementById("p2").value);
+            let p3 = parseFloat(document.getElementById("p3").value);
+
+            let soma = p1 + p2 + p3;
+            let media = soma / 3;
+            window.alert("Media:" + media);
+        }
+
+        function a() {
+            window.alert(" AAAA ")
+        }
+
+        function b() {
+            window.alert("BBBBB")
+        }
+    </script>
+
+</head>
+
+<body>
+    <label> Preço1 </label>
+    <input id="p1" />
+
+    <label> Preço2 </label>
+    <input id="p2" />
+
+    <label> Preço3 </label>
+    <input id="p3" />
+    <button onclick="calcularMedia()">Media</button>
+    <button onclick="a()">A</button>
+    <button onclick="b()">B</button>
+</body>
+
+</html>

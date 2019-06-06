@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <script>
+        //função para calcular o total
+        function calcularTotal() {
+            //Leitura dos campos da tela
+            let km = document.getElementById("km").value;
+
+            let mcA = document.getElementById("mediaconsumo_a").value;
+            let precoA = document.getElementById("preco_a").value;
+            //processamento dos dados
+            let litrosA = km / mcA;
+            let totalA = litrosA * precoA;
+
+            let mcG = document.getElementById("mediaconsumo_g").value;
+            let precoG = document.getElementById("preco_g").value;
+            //processamento dos dados
+            let litrosG = km / mcG;
+            let totalG = litrosG * precoG;
+
+            //saida dos dados calculados dentro dos elementos html
+            document.getElementById("litros_g").innerText = "Litros:" + litrosG;
+            document.getElementById("total_g").innerText = "Total:" + totalG;
+
+            document.getElementById("litros_a").innerText = "Litros:" + litrosA;
+            document.getElementById("total_a").innerText = "Total:" + totalA;
+
+            //Estrutura de Decisão
+            if (totalG < totalA) {
+                document.getElementById("viavel").innerText = "GASOLINA";
+            } else if (totalG > totalA) {
+                document.getElementById("viavel").innerText = "ALCOOL";
+            } else {
+                document.getElementById("viavel").innerText = "TANTO FAZ";
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <label>Qtd. de KM</label>
+    <input id="km" />
+
+    <label>Preço Alcool</label>
+    <input id="preco_a" />
+
+    <label>Média de Consumo Alcool</label>
+    <input id="mediaconsumo_a" />
+
+    <label>Preço Gasolina</label>
+    <input id="preco_g" />
+
+    <label>Média de Consumo Gasolina</label>
+    <input id="mediaconsumo_g" />
+
+
+    <button onclick="calcularTotal()">Calcular</button>
+
+    <br>
+
+    <label> Alcool </label>
+    <label id="litros_a"></label>
+    <label id="total_a"></label>
+
+    <br>
+    <label> Gasolina </label>
+    <label id="litros_g"></label>
+    <label id="total_g"></label>
+
+    <br>
+    <label id="viavel"></label>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script>
+        function verificaTriangulo() {
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
+            let n3 = parseFloat(document.getElementById("n3").value);
+
+            if (
+                n1 < (n2 + n3) && n1 > Math.abs(n2 - n3) &&
+                n2 < (n3 + n1) && n2 > Math.abs(n3 - n1) &&
+                n3 < (n1 + n2) && n3 > Math.abs(n1 - n2)
+            ) {
+
+
+                if (n1 == n2 && n2 == n3 && n3 == n1) {
+                    window.alert("Forma um tringulo Equilátero!")
+                } else if (n1 != n2 && n2 != n3 && n3 != n1) {
+                    window.alert("Forma um tringulo Escaleno!")
+                } else {
+                    window.alert("Isósceles!")
+                }
+
+            } else {
+                window.alert("Não forma um tringulo")
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="number" id="n1" placeholder="Lado 1">
+    <input type="number" id="n2" placeholder="Lado 2">
+    <input type="number" id="n3" placeholder="Lado 3">
+
+
+    <button onclick="verificaTriangulo()"> Triangulo</button>
+</body>
+
+</html>
