@@ -1,0 +1,67 @@
+<script>
+    let f1 = {
+        nome: "Maca",
+        preco: 1.80
+    }
+
+    let f2 = {
+        nome: "Banana",
+        preco: 1.20
+    }
+
+    let f3 = {
+        nome: "Melancia",
+        preco: 2.0
+    }
+
+
+    let frutas = [f1, f2, f3]
+
+    let f4 = {
+        nome: "Abacate",
+        preco: 1.5
+    }
+    frutas.push(f4)
+
+
+    function addFruta() {
+        let campoNome = document.getElementById("nome").value;
+        let campoPreco = parseFloat(document.getElementById("preco").value);
+
+        let f = {
+            nome: campoNome,
+            preco: campoPreco
+        }
+        frutas.push(f)
+    }
+
+
+    function listarFrutas() {
+        for (i = 0; i < frutas.length; i++) {
+            console.log("FRUTA " + (i + 1) + ":" + frutas[i].nome + " " + frutas[i].preco)
+        }
+    }
+
+    function media() {
+        let soma = 0;
+        for (i = 0; i < frutas.length; i++) {
+            soma = soma + frutas[i].preco
+        }
+        let media = soma / frutas.length;
+        console.log("Media:" + media)
+    }
+</script>
+
+<html>
+
+<body>
+    Nome:
+    <input id="nome">
+    Preço:
+    <input id="preco">
+    <button onclick="addFruta()">Adicionar</button>
+    <button onclick="listarFrutas()">Listar</button>
+    <button onclick="media()">Media</button>
+</body>
+
+</html>
