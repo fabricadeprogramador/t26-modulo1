@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <form id="title"> * GAME * </form>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        .grey {
+            width: 50px;
+            height: 50px;
+            background-color: grey;
+            margin-bottom: 1em;
+        }
+
+        .red {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            margin-bottom: 1em;
+        }
+    </style>
+    <script>
+        var count = 0;
+
+        function select(n) {
+            if (document.getElementById(n).className == "grey") {
+                //document.getElementById(n).style.backgroundColor = "red";
+                document.getElementById(n).className = "red"
+                count++;
+
+            } else if (document.getElementById(n).className == "red") {
+                //document.getElementById(n).style.blackgroundColor = "grey";
+                document.getElementById(n).className = "grey"
+                count--;
+
+            }
+            if (count % 2 == 0) {
+                document.getElementById("count").innerText = "Par " + count;
+            } else { // impar
+                document.getElementById("count").innerText = "Impar " + count;
+            }
+            if (count == 9) {
+                document.getElementById("title").innerText = " YOU WIN!"
+            } else {
+                document.getElementById("title").innerText = " * GAME * "
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;">
+
+    <div id="count"> Par 0 </div>
+    <Br>
+    <button id="1" class="grey" onclick="select(1)"> </button>
+    <button id="2" class="grey" onclick="select(2)"> </button>
+    <button id="3" class="grey" onclick="select(3)"> </button>
+    <br>
+    <button id="4" class="grey" onclick="select(4)"> </button>
+    <button id="5" class="grey" onclick="select(5)"> </button>
+    <button id="6" class="grey" onclick="select(6)"> </button>
+    <br>
+    <button id="7" class="grey" onclick="select(7)"> </button>
+    <button id="8" class="grey" onclick="select(8)"> </button>
+    <button id="9" class="grey" onclick="select(9)"> </button>
+
+</body>
+
+</html>

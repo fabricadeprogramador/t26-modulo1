@@ -1,0 +1,88 @@
+    <html>
+    <meta charset="utf-8" />
+    <script>
+        class Pessoa {
+            constructor(nome, sexo, idade) {
+                this.nome = nome;
+                this.sexo = sexo;
+                this.idade = idade;
+            }
+            maioridade() {
+                if (this.idade >= 18) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+
+        class GerenciadorPessoas {
+
+            constructor() {
+                this.pessoas = [];
+                this.qtdMulheres = 0;
+            }
+            adicionar() {
+                let nome = document.getElementById("nome").value;
+                let idade = document.getElementById("idade").value;
+                let sexo = document.querySelector("input[type=radio]:checked").value
+
+                let aluno = new Pessoa(nome, sexo, idade);
+
+                this.pessoas.push(aluno)
+
+                this.limparForm()
+
+            }
+
+            limparForm() {
+                document.getElementById("nome").value = "";
+                document.getElementById("idade").value = "";
+
+            }
+
+            listarMulheres() {
+                let saida = "";
+                for (let i = 0; i < this.pessoas.length; i++) {
+                    let p = this.pessoas[i];
+
+                    if (p.sexo == "f") {
+
+                        saida = saida + "<div>" + p.nome + "</div>"
+                        this.qtdMulheres++;
+                    }
+                }
+                document.getElementById("lista").innerHTML = saida + "<div> total:" + this.qtdMulheres + "  </div>";
+            }
+            listarHomens() {
+
+            }
+            listarAdolescentes() {
+
+            }
+
+        }
+
+        let gerPessoa = new GerenciadorPessoas();
+    </script>
+
+    <body>
+
+        <div> <input placeholder="Nome" id="nome" type="text"> </div>
+        <div> <input placeholder="Idade" type="number" id="idade"></div>
+        <div>
+            <label> M </label>
+            <input type="radio" name="sexo" value="m">
+            <label> F </label>
+            <input type="radio" name="sexo" value="f">
+        </div>
+        <div>
+            <button onclick="gerPessoa.adicionar()">Adicionar</button>
+            <button onclick="gerPessoa.listarMulheres()">Listar Mulheres</button>
+        </div>
+
+        <div id="lista"></div>
+
+    </body>
+
+    </html>

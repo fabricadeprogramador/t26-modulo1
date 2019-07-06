@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-3">
+    <title>Mini Game</title>
+    <link rel="stylesheet" href="miniGame.css">
+    <script src="miniGame.js"></script>
+</head>
+<script>
+    // let conjuntoBtn = document.getElementsByName("botao")
+    let alterarTexto = ["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7", "btn8", "btn9"]
+    let contador = 0;
+
+    function pintarRed() {
+        document.getElementById(alterarTexto[parseInt(document.activeElement.id) - 1]).innerHTML =
+            `<button type="button" onclick="pintarGrey()" name="botao" id="${parseInt(document.activeElement.id)}" style="background-color: red;"></button>`;
+        contador++
+        document.getElementById("result").innerHTML = `${contador} - ${contador%2 == 0 ? "Par" : "Impar"}`
+    }
+
+    function pintarGrey() {
+        document.getElementById(alterarTexto[parseInt(document.activeElement.id) - 1]).innerHTML =
+            `<button type="button" onclick="pintarRed()" name="botao" id="${parseInt(document.activeElement.id)}"></button>`;
+        contador--
+        if (contador != 0) {
+            document.getElementById("result").innerHTML = `${contador} - ${contador%2 == 0 ? "Par" : "Impar"}`
+        } else(document.getElementById("result").innerHTML = `Mini Game - Clique nos Quadrados`)
+    }
+</script>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .box {
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    button {
+        border-style: none;
+        background-color: #c1d6e0;
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #a11d00;
+    }
+</style>
+
+<body>
+    <h2>
+        <div class="info" id="result">Mini Game - Clique nos Quadrados</div>
+    </h2>
+    <div class="container">
+        <div class="box" id="btn1"><button type="button" onclick="pintarRed()" id="1"></button></div>
+        <div class="box" id="btn2"><button type="button" onclick="pintarRed()" id="2"></button></div>
+        <div class="box" id="btn3"><button type="button" onclick="pintarRed()" id="3"></button></div>
+        <div class="box" id="btn4"><button type="button" onclick="pintarRed()" id="4"></button></div>
+        <div class="box" id="btn5"><button type="button" onclick="pintarRed()" id="5"></button></div>
+        <div class="box" id="btn6"><button type="button" onclick="pintarRed()" id="6"></button></div>
+        <div class="box" id="btn7"><button type="button" onclick="pintarRed()" id="7"></button></div>
+        <div class="box" id="btn8"><button type="button" onclick="pintarRed()" id="8"></button></div>
+        <div class="box" id="btn9"><button type="button" onclick="pintarRed()" id="9"></button></div>
+        <div>
+</body>
+
+</html>

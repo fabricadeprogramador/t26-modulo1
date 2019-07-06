@@ -1,0 +1,52 @@
+    <html>
+    <meta charset="utf-8" />
+    <script>
+        var pessoa = {
+            nome: "Jão",
+            idade: "18",
+            sexo: "m",
+            maioridade: function () {
+                if (this.idade >= 18) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+        }
+
+
+        var n = pessoa.nome
+        var i = pessoa.idade
+        var m = pessoa.maioridade()
+        console.log(n)
+        console.log(i)
+        console.log(m)
+
+        pessoa.nome = "Maria"
+        pessoa.idade = 10
+        pessoa.sexo = "f"
+
+        console.log(pessoa.nome)
+        console.log(pessoa.idade)
+        console.log(pessoa.sexo)
+        console.log(pessoa.maioridade())
+    </script>
+
+    <body>
+
+        <div> <input placeholder="Nome" type="text"> </div>
+        <div> <input placeholder="Idade" type="number"></div>
+        <div>
+            <label> M </label>
+            <input type="radio" name="sexo" value="m">
+            <label> F </label>
+            <input type="radio" name="sexo" value="f">
+        </div>
+        <div>
+            <button>Adicionar</button>
+        </div>
+
+    </body>
+
+    </html>

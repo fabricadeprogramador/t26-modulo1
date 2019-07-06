@@ -1,0 +1,53 @@
+    <html>
+    <meta charset="utf-8" />
+    <script>
+        class Pessoa {
+
+            constructor(nome, sexo, idade) {
+                this.nome = nome;
+                this.sexo = sexo;
+                this.idade = idade;
+            }
+
+            maioridade() {
+                if (this.idade >= 18) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+
+
+        var aluno1 = new Pessoa("Eduardo", "m", 22);
+        var aluno2 = new Pessoa("Thiago", "m", 31);
+        var aluno3 = new Pessoa("Coutinho", "m", 50)
+
+        aluno1.nome = "Francisco";
+        console.log(aluno1.nome)
+        console.log(aluno1.sexo)
+        console.log(aluno1.idade)
+        console.log(aluno1.maioridade())
+
+        console.log(aluno2.maioridade())
+
+        console.log(aluno3.maioridade())
+    </script>
+
+    <body>
+
+        <div> <input placeholder="Nome" type="text"> </div>
+        <div> <input placeholder="Idade" type="number"></div>
+        <div>
+            <label> M </label>
+            <input type="radio" name="sexo" value="m">
+            <label> F </label>
+            <input type="radio" name="sexo" value="f">
+        </div>
+        <div>
+            <button>Adicionar</button>
+        </div>
+
+    </body>
+
+    </html>
