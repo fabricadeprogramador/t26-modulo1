@@ -1,0 +1,32 @@
+<script>
+    var maior = 0;
+    var menor = 10000;
+
+    var carros = [{
+        ano: 2000
+    }, {
+        ano: 2015
+    }, {
+        ano: 2019
+    }, {
+        ano: 1999
+    }, {
+        ano: 1980
+    }]
+
+
+    for (var i = 0; i < carros.length; i++) {
+
+        if (carros[i].ano > maior) {
+            maior = carros[i].ano
+        }
+
+        if (carros[i].ano < menor) {
+            menor = carros[i].ano
+        }
+    }
+
+    console.log("Mais Novo: " + maior)
+    console.log("Mais Velho:" + menor)
+    console.log("Media:" + parseInt((maior + menor) / 2))
+</script>

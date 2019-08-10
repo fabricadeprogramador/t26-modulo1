@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script>
+        class Pessoa {
+
+            constructor(nome, idade, telefone) {
+                this.nome = nome
+                this.idade = idade
+                this.telefone = telefone
+
+            }
+
+            getEstado() {
+                if (this.telefone.indexOf("(67)") != -1) {
+                    return "MS"
+                } else if (this.telefone.indexOf("(11)") != -1) {
+                    return "SP"
+                } else {
+                    return "LUA"
+                }
+            }
+
+            deMaior() {
+                if (this.idade >= 18) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+
+        let p1 = new Pessoa('jao', 53, '(67) 222')
+        console.log(p1.getEstado())
+        console.log(p1.deMaior())
+
+
+        let p2 = new Pessoa('Zé', 89, '(11) 444')
+        console.log(p2.getEstado())
+        console.log(p2.deMaior())
+
+        let p3 = new Pessoa()
+        console.log(p3)
+        p3.nome = "Maria"
+        p3.telefone = "(00) 888"
+        p3.idade = 17
+
+        console.log(p3.getEstado())
+        console.log(p3.deMaior())
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

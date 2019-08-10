@@ -1,0 +1,30 @@
+<html>
+
+
+<head>
+    <title>Gerenciador de Tarefas</title>
+    <script src="tarefas.js"></script>
+    <link href="tarefas.css" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+
+    <div class="principal">
+
+        <!-- Campo de entrada -->
+        <div class="cadastro">
+            <input onkeypress="tecla(event)" type="text" id="descTarefa" placeholder="Descrição da Tarefa" />
+            <!-- icone -->
+            <img src="icons/add.png" onclick="adicionarTarefa()">
+        </div>
+
+        <!-- Listagem-->
+        <div id="lista" class="lista">
+
+
+        </div>
+    </div>
+</body>
+
+</html>

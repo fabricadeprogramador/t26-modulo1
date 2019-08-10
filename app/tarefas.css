@@ -1,0 +1,38 @@
+.principal {
+    background-color: rgb(82, 137, 137)
+}
+
+.cadastro {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px
+}
+
+.cadastro input {
+    width: 70%;
+    height: 50%
+}
+
+.lista {
+    /* border-top-style: none;
+    border-top-width: 0px; */
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
+}
+
+.lista a {
+    text-decoration: none;
+}
+
+.lista div {
+    padding-left: 20px
+}
+
+a {
+    color: white
+}

@@ -1,0 +1,113 @@
+<html>
+<script>
+    //Construção da classe
+    class GerenciadorCurriculos {
+        //Construtor onde se declara as properties
+        constructor() {
+            this.arrPessoas = []
+            this.arrCursos = []
+        }
+        //método que insere objeto pessoa no array
+        cadastrarPessoa() {
+            //lendo o nome da tela
+            let vNome = document.getElementById("nome").value;
+            let pessoa = {
+                nome: vNome,
+                cursos: this.arrCursos
+            };
+            this.arrPessoas.push(pessoa)
+            this.arrCursos = []
+            this.limparForm();
+
+        }
+
+        cadastrarCurso() {
+
+            let vTipoCurso = document.getElementById("tipoCurso").value;
+
+            let vNomeCurso = document.getElementById("nomeCurso").value;
+
+            let vCargaCurso = document.getElementById("cargaCurso").value;
+
+            let curso = {
+                tipo: vTipoCurso,
+                nome: vNomeCurso,
+                cargaHorario: vCargaCurso
+            }
+
+            this.arrCursos.push(curso)
+
+        }
+
+        limparForm() {
+            document.getElementById("nome").value = "";
+
+            document.getElementById("tipoCurso").value = "";
+
+            document.getElementById("nomeCurso").value = "";
+
+            document.getElementById("cargaCurso").value = "";
+
+        }
+
+        filtrarComputacao() {
+            let maior = 0;
+            let pessoaMaior;
+            for (let i = 0; i < this.arrPessoas.length; i++) {
+                let p = this.arrPessoas[i];
+                let soma = 0;
+                for (let j = 0; j < p.cursos.length; j++) {
+                    let c = p.cursos[j];
+
+                    if (c.tipo == 1) {
+                        soma = soma + c.cargaHorario;
+                    }
+
+                }
+
+                if (soma > maior) {
+                    maior = soma;
+                    pessoaMaior = this.arrPessoas[i];
+                }
+
+            }
+            console.log(pessoaMaior)
+            //return pessoaMaior;
+        }
+
+    }
+    //instanciando um objeto da classe
+    let gc = new GerenciadorCurriculos();
+</script>
+
+<body>
+    nome
+    <input type="text" id="nome" value="" />
+
+    Tipo Curso
+    <input type="text" id="tipoCurso" value="" />
+
+    Nome do Curso
+    <input type="text" id="nomeCurso" value="" />
+
+    Carga Horária
+    <input type="text" id="cargaCurso" value="" />
+
+    <button onclick="gc.cadastrarCurso()">Adicionar Curso</button>
+
+
+    <button onclick="gc.cadastrarPessoa()">Cadastro</button>
+
+    <button onclick="gc.filtrarComputacao()">Computação</button>
+
+    <button onclick="gc.filtrarAdministração()">Adminstração</button>
+
+    <button onclick="gc.filtrarFinanças()">Finanças</button>
+
+
+
+
+
+</body>
+
+</html>
