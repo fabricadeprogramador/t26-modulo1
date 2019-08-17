@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Functions</title>
+    <script>
+        function somar(a = 0, b = 0) {
+            let s = a + b;
+            return s;
+        }
+
+        function mensagemConsole(m) {
+            console.log(`A soma é: ${m}`);
+
+        }
+
+        function mensagemWindow(m) {
+            window.alert(`A soma é: ${m}`);
+        }
+
+        function calcularSoma() {
+            let n1 = parseInt(document.getElementById("n1").value);
+            let n2 = parseInt(document.getElementById("n2").value);
+            mensagemConsole(somar(n1, n2));
+        }
+    </script>
+</head>
+
+<body>
+    <input id="n1" />
+    <input id="n2" />
+    <button onclick="calcularSoma()">Somar</button>
+</body>
+
+</html>

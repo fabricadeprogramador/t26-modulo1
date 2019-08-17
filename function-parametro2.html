@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Functions</title>
+    <script>
+        //Recebe um array de parcelas e devolve a soma
+        function somar(arrParcelas = []) {
+
+            let s = 0;
+
+            for (i = 0; i < arrParcelas.length; i++) {
+                s = s + arrParcelas[i]
+            }
+
+            return s;
+
+        }
+        //somarVencidas(   [  {valor:10, status:'v'}   ,  {valor:20, status:'q'} ,  {valor:10, status:'v'}   ] )
+        function somarVencidas(arrParcelas = []) {
+
+            let s = 0;
+
+            for (i = 0; i < arrParcelas.length; i++) {
+                if (arrParcelas[i].status == 'v') {
+                    s = s + arrParcelas[i].valor
+                }
+            }
+
+            return s;
+
+        }
+
+        let parcelasTela = [];
+
+        function adicionarParcela() {
+            let valor = parseFloat(document.getElementById("v").value);
+            let status = document.getElementById("s").value;
+
+            let parc = {
+                valor,
+                status
+            }
+            parcelasTela.push(parc)
+
+        }
+
+        function exibirSoma() {
+            let soma = somarVencidas(parcelasTela);
+            console.log(soma)
+        }
+    </script>
+</head>
+
+<body>
+    Valor da Parcela
+    <input id="v" />
+    Status
+    <input id="s" />
+
+    <button onclick="adicionarParcela()">Adicionar</button>
+    <button onclick="exibirSoma()">Mostrar Soma</button>
+</body>
+
+</html>
