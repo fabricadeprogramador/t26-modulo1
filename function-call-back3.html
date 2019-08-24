@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script>
+        let arrClientes = [{
+            nome: 'Jão'
+        }, {
+            nome: 'Zé'
+        }, {
+            nome: 'Maria'
+        }];
+
+        function listaClientes() {
+
+            setTimeout(function () {
+                let saida = `<ul>`;
+
+
+                arrClientes.forEach(item =>
+                    saida += `<li> ${item.nome}  </li>`
+                )
+
+                saida += `</ul>`;
+
+                document.body.innerHTML = saida;
+
+            }, 3000)
+
+        }
+
+        function cadastroCliente(cliente) {
+
+            //IMPLEMENTE INCLUSAO NO ARRAY 
+            //CLINETE APÓS 2 SEGUNDOS
+            console.log(`Cadastrando cliente ${cliente.nome} ...`)
+            setTimeout(function () {
+                arrClientes.push(cliente);
+                console.log(`${cliente.nome} cadastrado com sucesso..`)
+            }, 2000);
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
