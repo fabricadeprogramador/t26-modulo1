@@ -8,7 +8,24 @@ let arrClientes = [{
 
 function listarClientes() {
 
-    setTimeout(function () {
+    console.log(`Ordenando array...`)
+
+    arrClientes.sort((cli1, cli2) => {
+        if (cli1.nome < cli2.nome) {
+            return -1
+        } else if (cli1.nome > cli2.nome) {
+            return 1
+        } else {
+            return 0;
+        }
+
+    })
+
+    console.log(`Carregando a lista de clientes ...`)
+
+
+
+    setTimeout(() => {
         let saida = `<ul>`;
 
 
@@ -30,7 +47,7 @@ function cadastrarCliente(cliente, f) {
     //IMPLEMENTE INCLUSAO NO ARRAY 
     //CLINETE APÓS 2 SEGUNDOS
     console.log(`Cadastrando cliente ${cliente.nome} ...`)
-    setTimeout(function () {
+    setTimeout(() => {
         arrClientes.push(cliente);
         console.log(`${cliente.nome} cadastrado com sucesso..`)
         f() // Invoco o callback
@@ -55,6 +72,21 @@ function salvar() {
 
 }
 
+function excluir(index, f) {
+    //remocao 
+    console.log(`Excluindo objeto da posição ${index}`)
+    setTimeout(() => {
+
+        arrClientes.splice(index, 1)
+        console.log(`Excluído com sucesso!`)
+        f() // funcao apos excluir
+    }, 2500);
+
+
+    //carregar a lista
+
+}
+
 
 let btnSalvar = document.createElement("button");
 
@@ -64,3 +96,5 @@ btnSalvar.addEventListener("click", salvar);
 
 document.getElementById("cadCli").appendChild(btnSalvar)
 //document.body.appendChild(btnSalvar)
+
+listarClientes()
