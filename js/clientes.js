@@ -18,7 +18,8 @@ function listarClientes() {
 
         saida += `</ul>`;
 
-        document.body.innerHTML += saida;
+        // document.body.innerHTML += saida;
+        document.getElementById("saida").innerHTML = saida;
 
     }, 2000)
 
@@ -57,8 +58,9 @@ function salvar() {
 
 let btnSalvar = document.createElement("button");
 
-btnSalvar.innerText = "Salvar JS";
+btnSalvar.innerText = "Salvar JS ";
 
 btnSalvar.addEventListener("click", salvar);
 
-document.body.appendChild(btnSalvar)
+document.getElementById("cadCli").appendChild(btnSalvar)
+//document.body.appendChild(btnSalvar)
