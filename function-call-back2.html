@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script>
+        let arrClientes = [{
+            nome: 'Jão'
+        }, {
+            nome: 'Zé'
+        }, {
+            nome: 'Maria'
+        }];
+
+        function listaClientes() {
+
+            let saida = `<ul>`;
+
+            //Function anonima normal por parametro
+            arrClientes.forEach(function (item) {
+
+                saida += `<li> ${item.nome}  </li>`
+
+            })
+            //Arrow Function por parametro Sintaxe 1
+            arrClientes.forEach((item) => {
+                saida += `<li> ${item.nome}  </li>`
+            })
+
+            //Arrow Function por parametro Sintaxe 2
+            arrClientes.forEach(item =>
+                saida += `<li> ${item.nome}  </li>`
+            )
+
+            // for (let i = 0; i < arrClientes.length; i++) {
+            //     saida += ` <li> ${arrClientes[i].nome} </li> `
+            // }
+
+            saida += `</ul>`;
+
+            document.body.innerHTML = saida;
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
