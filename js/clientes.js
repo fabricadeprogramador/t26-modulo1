@@ -18,13 +18,13 @@ function listarClientes() {
 
         saida += `</ul>`;
 
-        document.body.innerHTML = saida;
+        document.body.innerHTML += saida;
 
     }, 2000)
 
 }
 
-function cadastrarCliente(cliente) {
+function cadastrarCliente(cliente, f) {
 
     //IMPLEMENTE INCLUSAO NO ARRAY 
     //CLINETE APÓS 2 SEGUNDOS
@@ -32,6 +32,7 @@ function cadastrarCliente(cliente) {
     setTimeout(function () {
         arrClientes.push(cliente);
         console.log(`${cliente.nome} cadastrado com sucesso..`)
+        f() // Invoco o callback
     }, 3000);
 
 }
@@ -39,10 +40,17 @@ function cadastrarCliente(cliente) {
 function salvar() {
 
     //Le o nome da tela realiza 
-    let nome = document.getElementsByTagName("input").value;
+    //let nome = document.getElementsByTagName("input")[0].value;
+    let nome = document.getElementById("nome").value;
+    let cliente = {
+        nome
+    }
+    cadastrarCliente(cliente, listarClientes) //3s
+
 
     //o cadastro de cliente "cadastrarCliente" e e
     //exibe a lista de clientes "listarClientes"
+
 
 }
 
@@ -50,7 +58,6 @@ function salvar() {
 let btnSalvar = document.createElement("button");
 
 btnSalvar.innerText = "Salvar JS";
-
 
 btnSalvar.addEventListener("click", salvar);
 
