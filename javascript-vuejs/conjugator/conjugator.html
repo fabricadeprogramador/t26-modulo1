@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="conjugator.js">
+    </script>
+</head>
+
+
+<body>
+    <div id="app">
+
+        <div v-for="v in verbos">
+
+            <div> I {{v.base}}</div>
+            <div>You {{v.base}}</div>
+            <div>He/She/It {{v.present}}</div>
+            <div>you {{v.base}}</div>
+            <div>They {{v.base}}</div>
+            <div>we {{v.base}}</div>
+
+        </div>
+        ------
+        <div v-for="v in verbos">
+
+            <div> I will {{v.base}}</div>
+            <div>You will {{v.base}}</div>
+            <div>He/She/It will {{v.base}}</div>
+            <div>you will {{v.base}}</div>
+            <div>They will {{v.base}}</div>
+            <div>we will {{v.base}}</div>
+
+
+
+        </div>
+
+        ------
+        <div v-for="v in verbos">
+
+            <div> I {{v.simplePast}}</div>
+            <div>You {{v.simplePast}}</div>
+            <div>He/She/It {{v.simplePast}}</div>
+            <div>you {{v.simplePast}}</div>
+            <div>They {{v.simplePast}}</div>
+            <div>we {{v.simplePast}}</div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

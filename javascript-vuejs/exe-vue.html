@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div>
+            <input type="text" v-model="nome">
+
+        </div>
+        <div>
+            {{ nome }}
+        </div>
+
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            nome: 'Jão'
+        }
+    });
+</script>
+
+</html>

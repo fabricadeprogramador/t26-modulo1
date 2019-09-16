@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    <div id="fotos">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function carregarUsuarios() {
+
+        console.log("Before Fetch:" + new Date().getTime())
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => {
+                console.log(" Response:" + new Date().getTime());
+                return response.json();
+            }).then((json) => {
+                console.log(" Json:" + new Date().getTime());
+                listarUsuarios(json)
+
+            })
+
+
+        console.log("After Fetch:" + new Date().getTime())
+
+
+    }
+
+    function listarUsuarios(json) {
+        json.forEach(element => {
+            console.log(element.username)
+        });
+    }
+
+    carregarUsuarios()
+</script>

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    <div id="fotos">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function carregarFotos() {
+
+        const KEY_GIPHY = 'Ewt9hKgWbhs1VwhkGu9X79r37egh0dyU';
+        let query = 'bruce lee';
+        let limit = 5;
+        const API_GIPHY_URL = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${KEY_GIPHY}&limit=${limit}`;
+
+        fetch(API_GIPHY_URL).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            gerarFoto(json);
+        })
+    }
+
+    function gerarFoto(json) {
+
+
+        json.data.forEach(element => {
+            //console.log(element);
+
+            let img = document.createElement("img");
+            img.src = element.images.original.url
+            document.getElementById("fotos").appendChild(img)
+        });
+
+    }
+
+    carregarFotos()
+</script>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script src="js/p5.min.js"></script>
+    <script>
+        function setup() {
+
+            createCanvas(640, 480);
+            background(0, 100, 0);
+            loadImage('img/alien1.png', function (img) {
+                image(img, 100, 100);
+            })
+
+
+            // loadImage('img/alien1.png', (img) => {
+            //     image(img, 100, 100);
+            // })
+
+            //loadImage('img/alien1.png', img => image(img, 100, 100))
+
+        }
+
+
+        function draw() {
+            //    x    y
+            line(0, 0, 640, 480)
+            line(640, 0, 0, 480)
+        }
+
+        function draw1() {
+
+            if (mouseIsPressed) {
+                fill(0)
+            } else {
+                fill(255)
+            }
+            ellipse(mouseX, mouseY, 80, 80)
+
+            //ellipse(50, 50, 80, 80)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

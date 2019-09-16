@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input placeholder="Nome" type="text" v-model="pessoa.nome">
+        </div>
+        <div>
+            <input placeholder="Data Nascimento" type="date" v-model="pessoa.dataNasc">
+        </div>
+        <div>
+            <input placeholder="email" type="email" v-model="pessoa.email">
+        </div>
+        <div>
+            <button v-on:click="cadastrar()">Cadastrar</button>
+        </div>
+
+        <div v-for="p in arrPessoas">
+            {{p.nome}} {{p.dataNasc}} {{p.email}}
+        </div>
+
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            pessoa: {},
+            arrPessoas: []
+        },
+        methods: {
+            cadastrar: function () {
+                this.arrPessoas.push(this.pessoa);
+                this.pessoa = {};
+            }
+
+        }
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="nota.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div>
+            <h1> Situação do Aluno</h1>
+            <input placeholder="Nome" type="text" v-model="nome">
+            <input placeholder="Nota1" type="number" v-model="nota1">
+            <input placeholder="Nota2" type="number" v-model="nota2">
+            <input placeholder="Nota3" type="number" v-model="nota3">
+            <button v-on:click="verificarSituacao()">Cadastro de Notas</button>
+        </div>
+        <div>
+            <button v-on:click="filtrarSituacao('APROVADO')"> Aprovados </button>
+            <button v-on:click="filtrarSituacao('RECUPERACAO')"> Recuperação </button>
+            <button v-on:click="filtrarSituacao('REPROVADO')"> Reprovados </button>
+            <button v-on:click="filtrarSituacao('TODOS')"> Todos </button>
+        </div>
+
+        <div>
+            Aprovados: {{aprovados}}
+            Recuperação: {{recuperacao}}
+            Reprovados: {{reprovados}}
+        </div>
+
+        <br>
+
+        <div v-for="p in filtrado">
+
+            {{p.nome}} -> {{p.media}} -> {{p.situacao}}
+        </div>
+    </div>
+</body>
+
+</html>

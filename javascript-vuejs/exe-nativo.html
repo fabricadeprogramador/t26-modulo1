@@ -1,0 +1,25 @@
+<html>
+
+<head>
+
+    <script>
+        function copiarTexto() {
+            //lendo o campo
+            let texto = document.getElementById("texto").value;
+            //imprimindo texto na tela 
+            document.getElementById("saida").innerText = texto;
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="text" id="texto" onkeyup="copiarTexto()">
+
+    <div id="saida">
+
+
+    </div>
+</body>
+
+</html>
