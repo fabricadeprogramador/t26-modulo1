@@ -10,44 +10,163 @@
 
 <body>
     <div id="app">
+        <div>
+            <h1> Simple Present:</h1>
+            <div> I {{verb.base}}</div>
+            <div> you {{verb.base}}</div>
+            <div>he/she/it {{verb.thirdPersonSingular}} </div>
+            <div>we {{verb.base}}</div>
+            <div>you {{verb.base}}</div>
+            <div>they {{verb.base}}</div>
+        </div>
+        <div>
+            <h1>Present Continuous:</h1>
+            <div>I am {{verb.continuous}}</div>
+                <div>you are {{verb.continuous}}</div>
+                    <div>he/she/it is {{verb.continuous}}</div>
+                        <div>we are {{verb.continuous}}</div>
+                            <div>you are {{verb.continuous}}</div>
+                                <div>they are {{verb.continuous}}</div>
+        </div>
+        <div>
+            <h1> Present Perfect: </h1>
+            <div>I have {{verb.pastParticiple}}</div>
+            <div>you have {{verb.pastParticiple}}</div>
+            <div>he/she/it has {{verb.pastParticiple}}</div>
+            <div>we have {{verb.pastParticiple}}</div>
+            <div>you have {{verb.pastParticiple}}</div>
+            <div>they have {{verb.pastParticiple}}</div>
+        </div>
+        <div>
+            <h1>Present Perfect Continuous:</h1>
+            <div>I have been {{verb.continuous}}</div>
+            <div>you have been {{verb.continuous}}</div>
+            <div> he/she/it has been {{verb.continuous}}</div>
+            <div>we have been {{verb.continuous}}</div>
+            <div>you have been {{verb.continuous}}</div>
+            <div>they have been {{verb.continuous}}</div>
+        </div>
 
-        <div v-for="v in verbos">
+        <div>
+            <h1> Simple Past:</h1>
+            <div> I {{verb.simplePast}}</div>
+                <div>you {{verb.simplePast}}</div>
+                    <div>he/she/it {{verb.simplePast}}</div>
+                        <div>we {{verb.simplePast}}</div>
+                            <div>you {{verb.simplePast}}</div>
+                                <div>they {{verb.simplePast}}</div>
+        </div>
 
-            <div> I {{v.base}}</div>
-            <div>You {{v.base}}</div>
-            <div>He/She/It {{v.present}}</div>
-            <div>you {{v.base}}</div>
-            <div>They {{v.base}}</div>
-            <div>we {{v.base}}</div>
+        <div>
+            <h1>Past Continuous:</h1>
+            I was {{verb.continuous}}
+            you were {{verb.continuous}}
+            he/she/it was {{verb.continuous}}
+            we were {{verb.continuous}}
+            you were {{verb.continuous}}
+            they were {{verb.continuous}}
+        </div>
+        <div>
+            <h1>Past Perfect:</h1>
+
+            I had {{verb.pastParticiple}}
+            you had {{verb.pastParticiple}}
+            he/she/it had {{verb.pastParticiple}}
+            we had {{verb.pastParticiple}}
+            you had {{verb.pastParticiple}}
+            they had {{verb.pastParticiple}}
+        </div>
+
+        <div>
+            <h1>Past Perfect Continuous:</h1>
+            I had been {{verb.continuous}}
+            you had been {{verb.continuous}}
+            he/she/it had been {{verb.continuous}}
+            we had been {{verb.continuous}}
+            you had been {{verb.continuous}}
+            they had been {{verb.continuous}}
+        </div>
+
+        <div>
+            <h1>Simple Future:</h1>
+            <div>I will {{verb.base}}</div>
+            <div>Will I  {{verb.base}}?</div>
+            <div>you will {{verb.base}}</div>
+            <div>he/she/it will {{verb.base}}</div>
+            <div> we will {{verb.base}}</div>
+                <div> you will {{verb.base}}</div>
+                    <div> they will {{verb.base}}</div>
+        </div>
+
+        <div>
+            <h1>Future Continuous:</h1>
+            I will be {{verb.continuous}}
+            you will be {{verb.continuous}}
+            he/she/it will be {{verb.continuous}}
+            we will be {{verb.continuous}}
+            you will be {{verb.continuous}}
+            they will be {{verb.continuous}}
+        </div>
+
+        <div>
+            <h1>Future Perfect:</h1>
+            I will have {{verb.pastParticiple}}
+            you will have {{verb.pastParticiple}}
+            he/she/it will have {{verb.pastParticiple}}
+            we will have {{verb.pastParticiple}}
+            you will have {{verb.pastParticiple}}
+            they will have {{verb.pastParticiple}}
+        </div>
+        <div>
+            <h1>
+                Future Perfect Continuous:</h1>
+            I will have been {{verb.continuous}}
+            you will have been {{verb.continuous}}
+            he/she/it will have been {{verb.continuous}}
+            we will have been {{verb.continuous}}
+            you will have been {{verb.continuous}}
+            they will have been {{verb.continuous}}
+        </div>
+        <div>
+            <h1>
+                Simple Conditional:</h1>
+            I would {{verb.base}}
+            you would {{verb.base}}
+            he/she/it would {{verb.base}}
+            we would {{verb.base}}
+            you would {{verb.base}}
+            they would {{verb.base}}
+        </div>
+        <div>
+            <h1>
+                Conditional Continuous:</h1>
+            I would be {{verb.continuous}}
+            you would be {{verb.continuous}}
+            he/she/it would be {{verb.continuous}}
+            we would be {{verb.continuous}}
+            you would be {{verb.continuous}}
+            they would be {{verb.continuous}}
+        </div>
+        <div>
+            <h1> Conditional Perfect:</h1>
+            I would have {{verb.pastParticiple}}
+            you would have {{verb.pastParticiple}}
+            he/she/it would have {{verb.pastParticiple}}
+            we would have {{verb.pastParticiple}}
+            you would have {{verb.pastParticiple}}
+            they would have {{verb.pastParticiple}}
 
         </div>
-        ------
-        <div v-for="v in verbos">
 
-            <div> I will {{v.base}}</div>
-            <div>You will {{v.base}}</div>
-            <div>He/She/It will {{v.base}}</div>
-            <div>you will {{v.base}}</div>
-            <div>They will {{v.base}}</div>
-            <div>we will {{v.base}}</div>
-
-
+        <div>
+            <h1> Conditional Perfect Continuous:</h1>
+            I would have been {{verb.continuous}}
+            you would have been {{verb.continuous}}
+            he/she/it would have been {{verb.continuous}}
+            we would have been {{verb.continuous}}
+            you would have been {{verb.continuous}}
 
         </div>
-
-        ------
-        <div v-for="v in verbos">
-
-            <div> I {{v.simplePast}}</div>
-            <div>You {{v.simplePast}}</div>
-            <div>He/She/It {{v.simplePast}}</div>
-            <div>you {{v.simplePast}}</div>
-            <div>They {{v.simplePast}}</div>
-            <div>we {{v.simplePast}}</div>
-
-        </div>
-
-    </div>
 </body>
 
 </html>
