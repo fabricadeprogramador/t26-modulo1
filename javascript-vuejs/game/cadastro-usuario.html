@@ -1,45 +1,124 @@
 <html>
 
 <head>
-    <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+
 
 </head>
 
 <body>
     <div id="app">
-        <div>
-            <input placeholder="Nome" type="text" v-model="pessoa.nome">
-        </div>
-        <div>
-            <input placeholder="Data Nascimento" type="date" v-model="pessoa.dataNasc">
-        </div>
-        <div>
-            <input placeholder="email" type="email" v-model="pessoa.email">
-        </div>
-        <div>
-            <button v-on:click="cadastrar()">Cadastrar</button>
-        </div>
 
-        <div v-for="p in arrPessoas">
-            {{p.nome}} {{p.dataNasc}} {{p.email}}
-        </div>
+        <v-card max-width="500" class="mx-auto">
+
+            <v-card-title>Cadastro de Usuários</v-card-title>
+
+            <v-card-text>
+                <v-text-field placeholder="Nome" type="text" v-model="pessoa.nome"> </v-text-field>
+
+                <v-text-field placeholder="Data Nascimento" type="date" v-model="pessoa.dataNasc"></v-text-field>
+
+                <v-text-field placeholder="email" type="email" v-model="pessoa.email"></v-text-field>
+            </v-card-text>
+
+            <v-card-actions>
+                <v-btn class="ma-2" color="#3f51b5" dark v-on:click="cadastrar()">
+
+                    <v-icon>mdi-content-save</v-icon>
+                </v-btn>
+
+                <v-btn class="ma-2" color="#3f51b5" dark v-on:click="cancelar()">
+
+                    <v-icon>mdi-cancel</v-icon>
+                </v-btn>
+
+            </v-card-actions>
+        </v-card>
+
+        <v-card max-width="500" class="mx-auto">
+            <v-list>
+                <v-list-item two-line v-for="(p,i) in arrPessoas">
+
+                    <v-list-item-content>
+
+                        <v-list-item-title v-text="p.nome"></v-list-item-title>
+                        <v-list-item-title v-text="p.email"></v-list-item-title>
+
+                    </v-list-item-content>
+
+
+
+                    <v-btn icon v-on:click="excluir(i)">
+                        <v-icon color="grey lighten-1">mdi-delete</v-icon>
+                    </v-btn>
+
+                    <v-btn icon v-on:click="editar(i)">
+                        <v-icon color="grey lighten-1">mdi-playlist-edit</v-icon>
+                    </v-btn>
+
+
+                </v-list-item>
+
+
+            </v-list>
+        </v-card>
 
     </div>
 </body>
 
+
+
+<!-- VUEJS -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+<!-- Vuetify JS -->
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+
 <script>
     var app = new Vue({
         el: '#app',
+        vuetify: new Vuetify(),
         data: {
+            indiceEditar: -1,
             pessoa: {},
             arrPessoas: []
         },
         methods: {
             cadastrar: function () {
-                this.arrPessoas.push(this.pessoa);
+                if (this.indiceEditar == -1) {
+                    //Novo
+                    this.arrPessoas.push(this.pessoa);
+
+                } else {
+                    //Altera
+                    //this.arrPessoas[this.indiceEditar] = this.pessoa;
+                    this.arrPessoas.splice(this.indiceEditar, 1, this.pessoa);
+                }
+
+                this.cancelar()
+            },
+            excluir: function (indice) {
+                this.arrPessoas.splice(indice, 1)
+            },
+            editar: function (indice) {
+                this.indiceEditar = indice;
+
+                //Atribui uma copia o objeto do array em pessoa
+                this.pessoa = Object.assign({}, this.arrPessoas[indice])
+            },
+            cancelar: function () {
                 this.pessoa = {};
+                this.indiceEditar = -1;
+
             }
+
 
         }
 
