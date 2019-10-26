@@ -16,14 +16,20 @@ class Categoria {
         this.frases[indiceFrase].favorito = !this.frases[indiceFrase].favorito
     }
 
+    // getFavoritos() {
+    //     let favoritos = [];
+    //     for (let i = 0; i < this.frases.length; i++) {
+    //         if (this.frases[i].favorito == true) {
+    //             favoritos.push(this.frases[i])
+    //         }
+    //     }
+    //     return favoritos;
+    // }
+
     getFavoritos() {
-        let favoritos = [];
-        for (let i = 0; i < this.frases.length; i++) {
-            if (this.frases[i].favorito == true) {
-                favoritos.push(this.frases[i])
-            }
-        }
-        return favoritos;
+        return this.frases.filter(function (frase) {
+            return frase.favorito == true;
+        })
     }
 
 }
