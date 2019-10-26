@@ -1,0 +1,12 @@
+{
+    base: 'work',
+    thirdPersonSingular: 'works',
+    simplePast: 'worked',
+    pastParticiple: 'worked',
+    continuous: 'working',
+    definition: "be engaged in physical or mental activity in order to achieve a purpose or result, especially in one's job; do work",
+    examples: ['He said it would work for a girl or a boy.',
+        'A coloring book and crayons kept her busy while they worked and talked.',
+        'We had worked hard on a presentation to a potential customer.'
+    ]
+}

@@ -10,6 +10,11 @@
 
 <body>
     <div id="app">
+
+        <div v-for="g in verb.gifs" style="padding: 10px">
+            <img width="100" :src="g">
+
+        </div>
         <div>
             <h1> Simple Present:</h1>
             <div> I {{verb.base}}</div>
@@ -22,11 +27,11 @@
         <div>
             <h1>Present Continuous:</h1>
             <div>I am {{verb.continuous}}</div>
-                <div>you are {{verb.continuous}}</div>
-                    <div>he/she/it is {{verb.continuous}}</div>
-                        <div>we are {{verb.continuous}}</div>
-                            <div>you are {{verb.continuous}}</div>
-                                <div>they are {{verb.continuous}}</div>
+            <div>you are {{verb.continuous}}</div>
+            <div>he/she/it is {{verb.continuous}}</div>
+            <div>we are {{verb.continuous}}</div>
+            <div>you are {{verb.continuous}}</div>
+            <div>they are {{verb.continuous}}</div>
         </div>
         <div>
             <h1> Present Perfect: </h1>
@@ -50,11 +55,11 @@
         <div>
             <h1> Simple Past:</h1>
             <div> I {{verb.simplePast}}</div>
-                <div>you {{verb.simplePast}}</div>
-                    <div>he/she/it {{verb.simplePast}}</div>
-                        <div>we {{verb.simplePast}}</div>
-                            <div>you {{verb.simplePast}}</div>
-                                <div>they {{verb.simplePast}}</div>
+            <div>you {{verb.simplePast}}</div>
+            <div>he/she/it {{verb.simplePast}}</div>
+            <div>we {{verb.simplePast}}</div>
+            <div>you {{verb.simplePast}}</div>
+            <div>they {{verb.simplePast}}</div>
         </div>
 
         <div>
@@ -90,12 +95,12 @@
         <div>
             <h1>Simple Future:</h1>
             <div>I will {{verb.base}}</div>
-            <div>Will I  {{verb.base}}?</div>
+            <div>Will I {{verb.base}}?</div>
             <div>you will {{verb.base}}</div>
             <div>he/she/it will {{verb.base}}</div>
             <div> we will {{verb.base}}</div>
-                <div> you will {{verb.base}}</div>
-                    <div> they will {{verb.base}}</div>
+            <div> you will {{verb.base}}</div>
+            <div> they will {{verb.base}}</div>
         </div>
 
         <div>

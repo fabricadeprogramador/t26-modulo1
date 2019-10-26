@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-content>
+                <v-container>
+
+                    <v-card class="d-flex flex-row mb-6 justify-center" flat tile>
+
+
+                        <v-text-field v-model="palavra" type="text" placeholder="Busca"> </v-text-field>
+
+
+
+                        <v-text-field v-model="limite" type="number" placeholder="Limite"></v-text-field>
+
+
+                        <v-btn v-on:click="buscarGifs()">Buscar</v-btn>
+
+
+                    </v-card>
+
+                    <v-card d-flex class="justify-center" flex-wrap flat tile>
+                        <v-card v-for="gif in arr_gifs" outlined tile>
+                            <img :src="gif" width="200">
+                        </v-card>
+                    </v-card>
+
+
+
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                limite: 1,
+                palavra: "",
+                arr_gifs: []
+            },
+            methods: {
+                buscarGifs: function () {
+                    this.arr_gifs = [];
+
+                    let api = "http://api.giphy.com/v1/gifs/search";
+                    let api_key = "nG9SBjoTPRKyiICK3AphZKjfcySbXp70";
+
+                    let url_api = `${api}?api_key=${api_key}&limit=${this.limite}&q=${this.palavra}`;
+
+
+                    fetch(url_api).then((response) => {
+                        return response.json()
+                    }).then((json) => {
+                        for (let i = 0; i < json.data.length; i++) {
+                            this.arr_gifs.push(json.data[i].images.original.url)
+                            //console.log(json.data[i].images.original.url)
+                        }
+
+                    })
+                }
+
+            },
+            created: function () {
+                //this.buscarGifs()
+            },
+
+
+            vuetify: new Vuetify()
+        })
+    </script>
+
+
+</body>
+
+
+
+</html>

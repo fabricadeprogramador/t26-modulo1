@@ -11,6 +11,10 @@ var app = new Vue({
                 examples: ['He said it would work for a girl or a boy.',
                     'A coloring book and crayons kept her busy while they worked and talked.',
                     'We had worked hard on a presentation to a potential customer.'
+                ],
+                gifs: [
+                    'https://media.giphy.com/media/ZTans30ONaaIM/giphy.gif',
+                    'https://media.giphy.com/media/Er3QVX48nt5ok/giphy.gif'
                 ]
             },
 
@@ -27,11 +31,11 @@ var app = new Vue({
             },
 
             {
-                base: 'eat',
-                thirdPersonSingular: 'eats',
-                simplePast: 'ate',
-                pastParticiple: 'eaten',
-                continuous: 'eating',
+                base: 'exchange',
+                thirdPersonSingular: 'exchanges',
+                simplePast: 'exchanged',
+                pastParticiple: 'exchanged',
+                continuous: 'exchanging',
                 definition: "the action of ingesting food",
                 examples: ['He eats pizza every friday',
                     'They have been eating a lot lately'
@@ -52,7 +56,7 @@ var app = new Vue({
     },
     computed: {
         verb: function () {
-            return this.verbs[1];
+            return this.verbs[0];
         }
 
     }
