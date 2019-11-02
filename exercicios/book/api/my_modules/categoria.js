@@ -36,3 +36,4 @@ class Categoria {
     }
 
 }
+module.exports = Categoria

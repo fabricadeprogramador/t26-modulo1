@@ -13,3 +13,5 @@ class CategoriaCRUD {
     }
 
 }
+
+module.exports = CategoriaCRUD
