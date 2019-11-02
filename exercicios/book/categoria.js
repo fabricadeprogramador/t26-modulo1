@@ -5,12 +5,15 @@ class Categoria {
         this.frases = []
     }
 
-    novaFrase(frase) {
+    novaFrase(textoFrase, audioFrase) {
         this.frases.push({
-            texto: frase,
-            favorito: false
+            texto: textoFrase,
+            favorito: false,
+            audioFrase: audioFrase
         })
     }
+
+
 
     favoritar(indiceFrase) {
         this.frases[indiceFrase].favorito = !this.frases[indiceFrase].favorito

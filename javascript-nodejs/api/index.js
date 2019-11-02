@@ -1,5 +1,14 @@
 var express = require('express')
 var bodyParser = require('body-parser')
+var pacote = require("./my_modules")
+var Usuario = require("./my_modules/user.js")
+
+var u1 = new Usuario();
+u1.nome = "jão"
+console.log(u1.nome)
+
+console.log(pacote.somar(1, 2))
+console.log(pacote.subtrair(1, 2))
 
 var app = express();
 app.use(bodyParser.json())
