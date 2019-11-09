@@ -8,8 +8,33 @@ class CategoriaCRUD {
         this.categorias.push(categoria);
     }
 
-    getCategoria(indice) {
+    getCategoriaByIndex(indice) {
         return this.categorias[indice]
+    }
+    getCategoriaById(id) {
+        for (let i = 0; i < this.categorias.length; i++) {
+            if (this.categorias[i].id == id) {
+                return this.categorias[i];
+            }
+        }
+    }
+
+    getIndexById(id) {
+        for (let i = 0; i < this.categorias.length; i++) {
+            if (this.categorias[i].id == id) {
+                return i;
+            }
+        }
+        return -1
+    }
+
+    alterar() {
+
+    }
+
+    deletar(id) {
+        let indice = this.getIndexById(id);
+        this.categorias.splice(indice, 1)
     }
 
 }

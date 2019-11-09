@@ -5,16 +5,33 @@ const CrudCategoria = require('./categoria-crud')
 const Categoria = require('./categoria')
 const crudCat = new CrudCategoria()
 
-//routes
+//Lista Todas de Categorias
 router.get("/", (req, res) => res.json(crudCat.categorias))
+
+//Busca por Categoria pelo ID
+router.get("/:id", (req, res) => res.json(crudCat.getCategoriaById(req.params.id)))
+
+//Cadastro de Categorias
 router.post("/", (req, res) => {
     //Ler o json do client
     //Cria um objeto categoria passanda a descricao no construtor
-    let categoria = new Categoria(req.body.descricao);
+    let categoria = new Categoria(req.body.descricao, req.body.id);
     //Cadastra o objeto categoria
     crudCat.cadastrarCategoria(categoria)
     //envia mensagem pro client
     res.send('Cadastrando com sucesso')
+
+})
+
+//Alteração de dados de uma categoria
+router.put("/", (req, res) => {
+
+})
+
+//Exclusão de uma categoria
+router.delete("/:id", (req, res) => {
+    crudCat.deletar(req.params.id)
+    res.send('Deletado com sucesso')
 
 })
 

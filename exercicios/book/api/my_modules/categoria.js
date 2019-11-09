@@ -1,6 +1,7 @@
 class Categoria {
 
-    constructor(descricao) {
+    constructor(descricao, id) {
+        this.id = id
         this.descricao = descricao
         this.frases = []
     }
