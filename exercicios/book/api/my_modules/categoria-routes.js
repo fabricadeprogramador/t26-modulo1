@@ -26,6 +26,14 @@ router.post("/", (req, res) => {
 //Alteração de dados de uma categoria
 router.put("/", (req, res) => {
 
+    //Leitura dos dados em Json
+    let id = req.body.id
+    let descricao = req.body.descricao
+
+    let categoria = new Categoria(descricao, id);
+    crudCat.alterar(categoria)
+    res.send('Alterado com sucesso')
+
 })
 
 //Exclusão de uma categoria

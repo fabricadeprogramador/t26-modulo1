@@ -28,7 +28,11 @@ class CategoriaCRUD {
         return -1
     }
 
-    alterar() {
+    alterar(categoria) {
+        let id = categoria.id
+        let categoriaEncontrada = this.getCategoriaById(id)
+        categoriaEncontrada.descricao = categoria.descricao
+
 
     }
 
