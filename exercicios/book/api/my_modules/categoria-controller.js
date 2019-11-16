@@ -1,25 +1,28 @@
-const CrudCategoria = require('./categoria-crud')
-const Categoria = require('./categoria')
-const crudCat = new CrudCategoria()
+const categoriaModel = require("../models/categoria-model")
 
 class CategoriaController {
 
     static listarTodos(req, res) {
 
-        res.json(crudCat.categorias)
+        categoriaModel.find({}, (err, categoria) => {
+
+            res.json(categoria)
+        })
 
     }
     static buscarPorId(req, res) {
-        res.json(crudCat.getCategoriaById(req.params.id))
+        categoriaModel.findById({
+            _id: req.params.id
+        }, (err, categoria) => {
+
+            res.json(categoria)
+        })
+
     }
 
     static cadastrar(req, res) {
 
-        //Ler o json do client
-        //Cria um objeto categoria passanda a descricao no construtor
-        let categoria = new Categoria(req.body.descricao, req.body.id);
-        //Cadastra o objeto categoria
-        crudCat.cadastrarCategoria(categoria)
+        categoriaModel.create(req.body)
         //envia mensagem pro client
         res.send('Cadastrando com sucesso')
 
@@ -30,20 +33,26 @@ class CategoriaController {
 
         //Leitura dos dados em Json
         let id = req.body.id
-        let descricao = req.body.descricao
 
-        let categoria = new Categoria(descricao, id);
-        crudCat.alterar(categoria)
-        res.send('Alterado com sucesso')
+        var cat = {
+            descricao: req.body.descricao
+        }
+
+        categoriaModel.findByIdAndUpdate({
+            _id: id
+        }, cat, (err, response) => {
+            res.send('Alterado com sucesso')
+        })
+
 
     }
 
     static deletar(req, res) {
-
-        crudCat.deletar(req.params.id)
+        const id = req.params.id;
+        categoriaModel.findByIdAndDelete({
+            _id: id
+        })
         res.send('Deletado com sucesso')
-
-
     }
 }
 

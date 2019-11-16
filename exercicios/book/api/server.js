@@ -25,24 +25,3 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log("Conectado com sucesso no Mongo")
 });
-
-// Criando Schema
-
-var categoriaSchema = new mongoose.Schema({
-    descricao: String
-});
-//Criando o modelo 
-var Categoria = mongoose.model('Categoria', categoriaSchema);
-
-//Instanciando um objeto
-var cat = new Categoria({
-    descricao: 'Viagem'
-})
-//Faz a persistencia
-cat.save(function (error, catSalva) {
-    if (error) {
-        console.log("Nao salvou")
-    }
-
-    console.log(catSalva._id)
-})
