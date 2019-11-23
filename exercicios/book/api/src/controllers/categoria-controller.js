@@ -49,9 +49,14 @@ class CategoriaController {
 
     static deletar(req, res) {
         const id = req.params.id;
-        categoriaModel.findByIdAndDelete({
+
+        categoriaModel.deleteOne({
             _id: id
+        }, (err) => {
+            console.log("Nao foi possivel deletar...")
         })
+
+
         res.send('Deletado com sucesso')
     }
 }

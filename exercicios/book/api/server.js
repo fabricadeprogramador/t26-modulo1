@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const categoriaRoutes = require('./my_modules/categoria-routes')
+const categoriaRoutes = require('./src/routes/categoria-routes')
 
 const app = express()
 app.use(bodyParser.json())
