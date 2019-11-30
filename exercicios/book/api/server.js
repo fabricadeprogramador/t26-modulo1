@@ -1,12 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+
 const categoriaRoutes = require('./src/routes/categoria-routes')
+const fraseRoutes = require('./src/routes/frase-routes')
 
 const app = express()
 app.use(bodyParser.json())
 
 //Cadastrando sistema de rota
 app.use('/categoria', categoriaRoutes)
+app.use('/frase', fraseRoutes)
 
 //Configurando a porta
 const port = 3000
