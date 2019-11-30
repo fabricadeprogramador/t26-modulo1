@@ -1,5 +1,5 @@
 const usuarioModel = require("../models/usuario-model")
-const ObjectId = require('mongoose').Types.ObjectId;
+
 
 class UsuarioController {
 
@@ -31,13 +31,15 @@ class UsuarioController {
             _id: usuario_id
         })
 
+        const favoritos = usuario.favoritos.concat(frase_id);
 
-        // //Adiciona no array
-        usuario.favoritos.push(new ObjectId(frase_id))
-        // //Salva
+        await usuarioModel.updateOne({
+            _id: usuario_id
+        }, {
+            favoritos
+        });
 
-        usuarioModel.update(usuario)
-        // //envia mensagem pro client
+
         res.send('Favoritado com sucesso')
     }
 
