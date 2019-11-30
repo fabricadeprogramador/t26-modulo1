@@ -1,5 +1,5 @@
 const fraseModel = require("../models/frase-model")
-var ObjectId = require('mongoose').Types.ObjectId;
+const ObjectId = require('mongoose').Types.ObjectId;
 
 class FraseController {
 
