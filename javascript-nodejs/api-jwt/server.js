@@ -5,13 +5,12 @@ var bodyParser = require('body-parser')
 // EXPRESS
 const app = express()
 app.use(bodyParser.json())
+chavePrivada = "banana nanica"
 
 app.use("/cadastrar", function (req, res) {
 
     // JWT
-    var token = jwt.sign({
-        usuario: "jao@gmail.com"
-    }, "banana");
+    var token = jwt.sign(req.body, chavePrivada);
 
 
     res.send(token)
@@ -40,10 +39,10 @@ function verificarToken(req, res, next) {
         var token = req.headers.authorization.split(" ")[1]
 
         //Pedimos par ao JWT verificar se o token é valido
-        var decoded = jwt.verify(token, "banana");
+        var decoded = jwt.verify(token, chavePrivada);
 
         //Imprimios o usuário que foi utilizado na hora da geração do toke pela rota de cadastro
-        console.log("usuario:" + decoded.usuario);
+        console.log("usuario:" + decoded.usuario + " senha:" + decoded.senha);
         //res.sendStatus(403)
         console.log("Vericando token, está OK")
         next()
