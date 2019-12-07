@@ -26,7 +26,7 @@ class UsuarioController {
         let usuario_id = req.body.usuario_id
         let frase_id = req.body.frase_id
 
-        //Busco por id
+        //Busco por id no banco
         let usuario = await usuarioModel.findById({
             _id: usuario_id
         })
