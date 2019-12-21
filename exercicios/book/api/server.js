@@ -10,10 +10,21 @@ const chavePrivada = "banana nanica"
 const app = express()
 app.use(bodyParser.json())
 
+//Ativando o CORS permissao de request
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 //Cadastrando sistema de rota
-app.use('/categoria', verificarToken, categoriaRoutes)
-app.use('/frase', verificarToken, fraseRoutes)
-app.use('/usuario', verificarToken, usuarioRoutes)
+// app.use('/categoria', verificarToken, categoriaRoutes)
+// app.use('/frase', verificarToken, fraseRoutes)
+// app.use('/usuario', verificarToken, usuarioRoutes)
+
+app.use('/categoria', categoriaRoutes)
+app.use('/frase', fraseRoutes)
+app.use('/usuario', usuarioRoutes)
 
 //Configurando a porta
 const port = 3000
