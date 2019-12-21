@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Frases CRUD</h1>
+    <h1>Frase CRUD</h1>
   </div>
 </template>
