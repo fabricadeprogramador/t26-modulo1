@@ -20,9 +20,7 @@
 
     <v-snackbar v-model="snackbar">
       {{ mensagem.texto }}
-      <v-btn color="indigo" text @click="snackbar = false">
-        Fechar
-      </v-btn>
+      <v-btn color="indigo" text @click="snackbar = false">Fechar</v-btn>
     </v-snackbar>
   </v-container>
 </template>
